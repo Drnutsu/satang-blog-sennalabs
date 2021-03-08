@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -33,9 +34,14 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span>I`&apos;m here to stay (Footer)</span>
     </footer>
   </div>
 )
 
 export default Layout
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+}

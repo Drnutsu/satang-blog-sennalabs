@@ -1,0 +1,181 @@
+/**
+ * COLORS
+ * a vibrant set of blues is the centerpoint of the color palette. When combined with the simplicity
+ * of black and white, a refreshing and unique look emerges for Satang.
+*/
+$primary-color: #143fe4;
+$secondary-color: #008cff;
+$secondary-hover-color: #092abd;
+$black-color: #111;
+$white-color: #fff;
+
+/**
+ * SECONDARY COLORS
+ * these colors are used for status, tags, and any other place where color can provide value and meaning.
+ */
+$green-color: #4fbd00;
+$orange-color: #fd7f23;
+$red-color: #ff1255;
+$ocean-blue-color: #00d9ff;
+$light-green-color: #06d6a0;
+$yellow-color: #ffdb00;
+
+/**
+ * OTHER COLORS
+ * general colors that is not in design system (these colors should be provided by designer)
+ */
+$darkblue-0001-color: #0c163d;
+
+/**
+ * TINT & SHADE
+ * we divided these blues into 10 tint & shades ranging from light to dark for various use case
+ */
+$satang-blue-100-color: #0f1b4f;
+$satang-blue-90-color: #102274;
+$satang-blue-80-color: #122b9b;
+$satang-blue-70-color: #1333bf;
+$satang-blue-60-color: #143fe4;
+$satang-blue-50-color: #3f63ea;
+$satang-blue-40-color: #6b86ef;
+$satang-blue-30-color: #96a9f4;
+$satang-blue-20-color: #c2cdfb;
+$satang-blue-10-color: #edf0ff;
+$satang-blue-00-color: #f7f9ff;
+
+$aqua-blue-100-color: #edf0ff;
+$aqua-blue-90-color: #0c356f;
+$aqua-blue-80-color: #07489f;
+$aqua-blue-70-color: #045acf;
+$aqua-blue-60-color: #006cff;
+$aqua-blue-50-color: #2f87ff;
+$aqua-blue-40-color: #60a3ff;
+$aqua-blue-30-color: #8ebeff;
+$aqua-blue-20-color: #bedaff;
+$aqua-blue-10-color: #edf5ff;
+
+$gray-110-color: #262626;
+$gray-100-color: #3b3b3b;
+$gray-90-color: #515151;
+$gray-80-color: #666;
+$gray-70-color: #7b7b7b;
+$gray-60-color: #909090;
+$gray-50-color: #a5a5a5;
+$gray-40-color: #bababa;
+$gray-30-color: #d0d0d0;
+$gray-20-color: #e5e5e5;
+$gray-10-color: #fafafa;
+$tint-white-color: #edf5ff;
+
+/**
+ * BACKGROUND & SHADOW COLOR
+ * A vibrant set of blues is the centerpoint of the color palette.
+ * When combined with the simplicity of black and white, a refreshing and unique look emerges for Satang.
+ */
+// For dark theme
+$dark-blue-100: #11131d;
+$dark-blue-90: #141724;
+$dark-blue-80: #181b2b;
+$dark-blue-70: #1b1f32;
+$dark-blue-60: #1f2337;
+$dark-blue-50: #22273e;
+$dark-blue-40: #2c334f;
+$dark-blue-30: #363e60;
+$dark-blue-20: #363e60;
+$dark-blue-10: #363e60;
+$dark-blue-00: #363e60;
+$dark-blue-000: #363e60;
+
+// For white theme
+$cool-gray-100-color: #818490;
+$cool-gray-90-color: #8b8e99;
+$cool-gray-80-color: #a1a3ad;
+$cool-gray-70-color: #7b7b7b;
+$cool-gray-60-color: #ccced4;
+$cool-gray-50-color: #e2e4e8;
+$cool-gray-30-color: #f2f4f9;
+$cool-grey-20-color: #eef0f7;
+
+/**
+ * TINT & SHADE
+ * We divided these blues into 10 tint & shades ranging from light to dark for various use case
+ */
+$green-100-color: #111d08;
+$green-90-color: #214606;
+$green-80-color: #306d03;
+$green-70-color: #419502;
+$green-60-color: #4fbd00;
+$green-50-color: #70ca2f;
+$green-40-color: #91d85f;
+$green-30-color: #b3e58e;
+$green-20-color: #d4f2be;
+$green-10-color: #f5ffed;
+
+$red-100-color: #10233e;
+$red-90-color: #560a20;
+$red-80-color: #8f0d32;
+$red-70-color: #c71043;
+$red-60-color: #ff1255;
+$red-50-color: #ff3e74;
+$red-40-color: #ff6a94;
+$red-30-color: #ff95b4;
+$red-20-color: #ffc1d3;
+$red-10-color: #ffedf2;
+
+$ocean-blue-100-color: #081a1d;
+$ocean-blue-90-color: #064a56;
+$ocean-blue-80-color: #057a8e;
+$ocean-blue-70-color: #03a9c7;
+$ocean-blue-60-color: #00d9ff;
+$ocean-blue-50-color: #2fe0ff;
+$ocean-blue-40-color: #5fe7ff;
+$ocean-blue-30-color: #8eeeff;
+$ocean-blue-20-color: #bef5ff;
+$ocean-blue-10-color: #edfcff;
+
+$orange-100-color: #1d1108;
+$orange-90-color: #552d0f;
+$orange-80-color: #8d4816;
+$orange-70-color: #c5641d;
+$orange-60-color: #fd7f23;
+$orange-50-color: #fd974c;
+$orange-40-color: #ffae74;
+$orange-30-color: #fec69c;
+$orange-20-color: #ffddc5;
+$orange-10-color: #fff5ed;
+
+$light-green-100: #081d17;
+$light-green-90: #074b39;
+$light-green-80: #067b5c;
+$light-green-70: #07a87e;
+$light-green-60: #06d6a0;
+$light-green-50: #34deb2;
+$light-green-40: #62e6c4;
+$light-green-30: #92f0d6;
+$light-green-20: #bff7e8;
+$light-green-10: #edf0ff;
+
+$yellow-100: #1d1a08;
+$yellow-90: #564b05;
+$yellow-80: #8f7b04;
+$yellow-70: #c7ab03;
+$yellow-60: #ffdb00;
+$yellow-50: #ffe32f;
+$yellow-40: #ffe95f;
+$yellow-30: #ffef8e;
+$yellow-20: #fff6be;
+$yellow-10: #fffded;
+
+/**
+ * OLD COLOR
+ * these colors are still using for somewhere
+ */
+$primary-color-old: #3983fa;
+$danger-color-old: #ea0070;
+$yellow-color-old: #f0ba08;
+$success-color-old: green;
+$correct-color-old: #00c087;
+$border-color-old: #eaecef;
+$text-color-old: #212833;
+$fade-text-color-old: #262626;
+$gray-color-old: #848e9c;
+$dark-gray-color-old: #48515d;

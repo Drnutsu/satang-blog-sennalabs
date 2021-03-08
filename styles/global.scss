@@ -1,0 +1,20 @@
+@import '~include-media/dist/include-media.scss';
+@import 'styles/variables/all';
+
+$bg-color: $gray-10-color;
+$link-color: $aqua-blue-50-color;
+$menu-item-hover-bg-color: rgba(255, 255, 255, 0.04);
+$description-text-color: $cool-gray-90-color;
+$header-nav-link-color: $white-color;
+$header-menu-bg-color: $darkblue-0001-color;
+$header-description-text-color: $cool-gray-90-color;
+$default-bg-color: $satang-blue-00-color;
+$table-row-seperate-line: $cool-grey-20-color;
+$table-header-title: $cool-gray-90-color;
+$card-form-shadow: 0 0 31px 0 #eef0f7;
+$layout-content-shadow: 0 0 2px 0 rgba(38, 38, 38, 0.08),
+  0 1px 3px 0 rgba(38, 38, 38, 0.06);
+$scrollbar-bg-color: rgba(255, 255, 255, 0.25);
+$scrollbar-track-bg-color: rgba(255, 255, 255, 0.25);
+$scrollbar-thumb-bg-color: rgba(255, 255, 255, 0.2);
+$menu-item-color: rgba(255, 255, 255, 0.6);

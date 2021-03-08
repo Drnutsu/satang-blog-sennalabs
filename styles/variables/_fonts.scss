@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'TTInterface';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-Regular.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'TTInterface-Bold';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-Bold.ttf') format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'TTInterface-BoldIntalaic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-BoldItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'TTInterface-Black';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-Black.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'TTInterface-BlackItalic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-BlackItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'TTInterface-ExtraBold';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-ExtraBold.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-ExtraBoldItalic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-ExtraBoldItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-ExtraLight';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-ExtraLight.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-Light';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-Light.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-LightItalic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-LightItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-Medium';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-Medium.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterfaces-MediumItalic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-MediumItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-SemiBold';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-SemiBold.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterfaces-SemiBoldItalic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-SemiBoldItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterface-Thin';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-Thin.ttf') format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'TTInterfaces-ThinItalic';
+  src: url('/assets/fonts/TTInterface/TTInterfaces-ThinItalic.ttf')
+    format('truetype');
+  // font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+
+// font family
+$fallback-font: DINNext, IBMPlexSans, arial, pingfangsc-regular,
+  'Microsoft YaHei', sans-serif;
+$font-ttinterface: 'TTinterface', $fallback-font;
+$font-ttinterface-bold: 'TTInterface-BoldIntalic', $fallback-font;
+$font-ttinterface-bold-intalic: 'TTInterface-BoldIntalic', $fallback-font;
+$font-ttinterface-black: 'TTInterface-Black', $fallback-font;
+$font-ttinterface-bold-intalic: 'TTInterface-BlackIntalic', $fallback-font;
+$font-ttinterface-extra-bold: 'TTInterface-ExtraBold', $fallback-font;
+$font-ttinterface-extra-bold-intalic: 'TTInterface-ExtraBoldIntalic',
+  $fallback-font;
+$font-ttinterface-extra-light: 'TTInterface-ExtraLight', $fallback-font;
+$font-ttinterface-light: 'TTInterface-Light', $fallback-font;
+$font-ttinterface-light-italic: 'TTInterface-LightItalic', $fallback-font;
+$font-ttinterface-medium: 'TTInterface-Medium', $fallback-font;
+$font-ttinterface-medium-italic: 'TTInterface-MediumItalic', $fallback-font;
+$font-ttinterface-semi-bold: 'TTInterface-SemiBold', $fallback-font;
+$font-ttinterface-semi-bold-italic: 'TTInterface-SemiBoldItalic', $fallback-font;
+$font-ttinterface-thin: 'TTInterface-Thin', $fallback-font;
+$font-ttinterface-thin-italic: 'TTInterface-ThinItalic', $fallback-font;

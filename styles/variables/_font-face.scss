@@ -1,0 +1,144 @@
+// this file is copied from two parts of Binance's css file. that's why there are some duplicated font face definition.
+
+// old font-face
+@font-face {
+  font-family: 'DINPro';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Light.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Light.otf')
+      format('opentype');
+  font-weight: 300;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'DINPro';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Regular.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Regular.otf')
+      format('opentype');
+  font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'DINPro';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Medium.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Medium.otf')
+      format('opentype');
+  font-weight: 500;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'DINPro';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Bold.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Bold.otf')
+      format('opentype');
+  font-weight: 700;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'DINNext';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Light.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Light.otf')
+      format('opentype');
+  font-weight: 300;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'DINNext';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Regular.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Regular.otf')
+      format('opentype');
+  font-weight: 400;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'DINNext';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Medium.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Medium.otf')
+      format('opentype');
+  font-weight: 500;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: 'DINNext';
+  src: url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Bold.woff2')
+      format('woff2'),
+    url('/assets/fonts/din/DINNextLTPro/DINNextLTPro-Bold.otf')
+      format('opentype');
+  font-weight: 700;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: url('/assets/fonts/ibm/IBMPlexSans-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: url('/assets/fonts/ibm/IBMPlexSans-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: url('/assets/fonts/ibm/IBMPlexSans-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: url('/assets/fonts/ibm/IBMPlexSans-SemiBold.otf') format('opentype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: url('/assets/fonts/ibm/IBMPlexSans-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'DINPro';
+  src: url('/assets/fonts/din/DINPro/DINPro.otf');
+  unicode-range: U+30-39;
+}
+@font-face {
+  font-family: 'DINPro-Medium';
+  src: url('/assets/fonts/din/DINPro/DINPro-Medium.otf');
+  unicode-range: U+30-39;
+}
+@font-face {
+  font-family: 'DINPro-Bold';
+  src: url('/assets/fonts/din/DINPro/DINPro-Bold.otf');
+  unicode-range: U+30-39;
+}
+@font-face {
+  font-family: 'DINPro-Light';
+  src: url('/assets/fonts/din/DINPro/DINPro-Light.otf');
+  unicode-range: U+30-39;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans-Light';
+  src: url('/assets/fonts/ibm/IBMPlexSans-Light.otf');
+}
+@font-face {
+  font-family: 'IBMPlexSans-Medium';
+  src: url('/assets/fonts/ibm/IBMPlexSans-Medium.otf');
+}
+@font-face {
+  font-family: 'IBMPlexSans-Regular';
+  src: url('/assets/fonts/ibm/IBMPlexSans-Regular.otf');
+}
+@font-face {
+  font-family: 'IBMPlexSans-SemiBold';
+  src: url('/assets/fonts/ibm/IBMPlexSans-SemiBold.otf');
+}
+@font-face {
+  font-family: 'IBMPlexSans-ExtraLight';
+  src: url('/assets/fonts/ibm/IBMPlexSans-ExtraLight.otf');
+}
