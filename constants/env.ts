@@ -1,9 +1,3 @@
-export const APP_VERSION = process.env.NEXT_PUBLIC_VERSION
-export const APP_ENV = process.env.NEXT_PUBLIC_APP_ENV
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
-export const DOMAIN_NAME = process.env.NEXT_PUBLIC_DOMAIN_NAME
-export const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
-export const BASE_WEB_SOCKET = process.env.NEXT_PUBLIC_BASE_WEB_SOCKET
-export const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
-export const EXCHANGE_PREFIX_PATH = process.env.NEXT_PUBLIC_EXCHANGE_PREFIX_PATH
-export const CLASSIC_PREFIX_PATH = process.env.NEXT_PUBLIC_CLASSIC_PREFIX_PATH
+export const STORYBLOK_BASE_URL = process.env.NEXT_PUBLIC_STORYBLOK_BASE_URL
+export const STORYBLOK_PUBLIC_TOKEN = process.env.NEXT_PUBLIC_STORYBLOK_PUBLIC_TOKEN
+

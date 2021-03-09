@@ -1,4 +1,4 @@
-@import "styles/global.scss";
+@import 'styles/global.scss';
 
 .container {
   > .div1 {
@@ -8,5 +8,10 @@
     display: flex;
     color: white;
     justify-content: space-evenly;
+  }
+  .boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
   }
 }

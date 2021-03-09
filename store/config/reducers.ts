@@ -24,8 +24,6 @@ export const configActions: ConfigActionsType = createActions(
   options,
 )
 
-console.log('configActions.update.language', `configActions.update.language`)
-
 export const configReducer = handleActions(
   {
     [configActions.update.language]: (state: any, action: AnyAction) => ({
