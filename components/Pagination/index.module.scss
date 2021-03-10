@@ -1,0 +1,27 @@
+@import 'styles/global.scss';
+
+.container {
+  width: 335px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+
+  > .page-text {
+    grid-column-start: 2;
+    > span {
+      font-weight: 600;
+    }
+  }
+  > .next-btn {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 32px;
+    background-color: $primary-color;
+    font-weight: 600;
+    color: white;
+  }
+}

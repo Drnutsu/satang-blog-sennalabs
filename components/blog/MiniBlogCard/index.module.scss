@@ -1,0 +1,58 @@
+@import 'styles/global.scss';
+
+.container {
+  max-width: 277px;
+  min-height: 180px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  > .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+
+    > .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    > .author {
+      display: flex;
+      justify-content: space-between;
+      > .name {
+      }
+      > .date {
+        position: relative;
+        &:after {
+          right: -15px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+
+          position: absolute;
+          content: '';
+          width: 4px;
+          height: 4px;
+          background: #111111;
+          border-radius: 50%;
+        }
+        &:before {
+          left: -15px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          position: absolute;
+          content: '';
+          width: 4px;
+          height: 4px;
+          background: #111111;
+          border-radius: 50%;
+        }
+      }
+      > .duration {
+      }
+    }
+  }
+}

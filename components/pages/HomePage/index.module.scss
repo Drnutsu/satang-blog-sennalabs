@@ -1,0 +1,19 @@
+@import 'styles/global';
+
+.container {
+  > .home-body {
+    margin: auto;
+    max-width: 750px;
+  }
+
+  > .middle-content {
+    margin: 50px auto;
+    max-width: 1000px;
+    min-height: 260px;
+    border-radius: 20px;
+    background: #143fe4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Tag } from 'antd'
 import {
   HeartFilled,
   MessageOutlined,
@@ -8,23 +7,29 @@ import {
 import Author from 'components/Author'
 
 import styles from './index.module.scss'
+import Tag from 'components/tags/Tag'
+import { BlogCardProps } from './interface'
 
-type BlogCardProps = {
-  topic: string
-  intro: string
-}
-
-const BlogCard = ({ topic, intro }: BlogCardProps) => {
+const BlogCard = ({
+  tag,
+  title,
+  intro,
+  isBlue,
+  isNoIntro,
+  isNoImage,
+}: BlogCardProps) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container}  ${isBlue && styles.blue}`}>
       <div className={styles.tag}>
-        <Tag color="red">red</Tag>
+        <Tag colorTheme={tag.color}>{tag.title}</Tag>
       </div>
-      <div className={styles.image}>
-        <img src="https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg" />
-      </div>
-      <div className={styles.topic}>{topic}</div>
-      <div className={styles.intro}>{intro}</div>
+      {!isNoImage && (
+        <div className={styles.image}>
+          <img src="https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg" />
+        </div>
+      )}
+      <div className={styles.topic}>{title}</div>
+      {!isNoIntro && <div className={styles.intro}>{intro}</div>}
       <Author />
       <div className={styles.actions}>
         <HeartFilled />

@@ -5,6 +5,7 @@ import { IntlProvider } from 'react-intl'
 import useConfig from 'hooks/config'
 import { supportedLanguagesMap } from 'utils/language'
 import { useRouter } from 'next/router'
+import Layout from '../components/Layout'
 
 export default function AppWrapper({
   Component,
@@ -37,7 +38,9 @@ export default function AppWrapper({
 
   return (
     <IntlProvider locale={language!} messages={messages}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </IntlProvider>
   )
 }

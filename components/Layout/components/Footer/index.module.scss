@@ -1,0 +1,42 @@
+@import 'styles/global.scss';
+
+.container {
+  background-color: #111111;
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 60px;
+    justify-items: center;
+    .topic {
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+    }
+    > .footer-section {
+      display: flex;
+      flex-direction: column;
+
+      > .menu {
+        &.is-first {
+          margin-top: 15px;
+        }
+        line-height: 26px;
+        font-size: 14px;
+        color: #8b8e99;
+      }
+    }
+    > .contract-us {
+      > .icons {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 20px;
+      }
+    }
+  }
+}

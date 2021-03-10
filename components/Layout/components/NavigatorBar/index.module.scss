@@ -1,0 +1,37 @@
+@import 'styles/global.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  background-color: $header-menu-bg-color;
+  color: white;
+  padding: 10px 25px;
+  min-height: 80px;
+  > .logo {
+    > img {
+      width: 150px;
+      height: 50px;
+    }
+  }
+
+  > .menu {
+    margin-left: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > .on-left {
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+    }
+    > .on-right {
+      width: 300px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    cursor: pointer;
+  }
+}

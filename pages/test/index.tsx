@@ -22,9 +22,7 @@ export default function Contact() {
       </Head>
       <div className="">HighLight stories</div>
       <div className={styles.boxes}>
-        {highlightBlog.map((data: any) => (
-          <BlogCard topic={data.content.title} intro={data.content.intro} />
-        ))}
+
       </div>
     </div>
   )

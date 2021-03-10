@@ -1,0 +1,10 @@
+@import 'styles/global.scss';
+
+.container {
+  > .tag-suggestion {
+    background-color: #111111;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

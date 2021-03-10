@@ -1,0 +1,42 @@
+@import 'styles/global.scss';
+
+.container {
+  position: relative;
+  min-height: 50vh;
+  background-color: #181b2b;
+  display: flex;
+  justify-content: space-between;
+
+  > .slider {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    > .hero-slider {
+      display: flex;
+      justify-content: space-between;
+      > .left-side {
+        .title {
+          font-size: 30px;
+          font-weight: bold;
+        }
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+      }
+      > .right-side {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    > .recommend-blog {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0;
+
+    }
+  }
+}
