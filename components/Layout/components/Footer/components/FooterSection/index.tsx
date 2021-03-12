@@ -32,6 +32,7 @@ const FooterSection = ({ title, menu }: FooterSectionProps) => {
         <div className={styles['grid-content']}>
           {menu.map((item, index) => (
             <div
+              key={item.title + index}
               className={`${styles.menu} ${index === 0 && styles['is-first']}`}
             >
               <Link href={item.link}>{item.title}</Link>
