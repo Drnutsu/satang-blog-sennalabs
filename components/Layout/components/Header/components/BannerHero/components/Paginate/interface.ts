@@ -1,1 +1,1 @@
-export type BannerHeroProps = {}
+export type PaginateProps = {}
