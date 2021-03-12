@@ -1,0 +1,16 @@
+@import 'styles/variables/font-face';
+@import 'styles/override.scss';
+
+#root {
+  // height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+// React tooltip styles
+.__react_component_tooltip {
+  font-size: 12px;
+  opacity: 1;
+  padding: 5px !important;
+}

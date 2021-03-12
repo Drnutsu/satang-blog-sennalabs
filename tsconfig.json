@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
@@ -19,5 +20,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx",""]
 }

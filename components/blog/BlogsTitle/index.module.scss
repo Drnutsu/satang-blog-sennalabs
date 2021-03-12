@@ -1,0 +1,30 @@
+@import 'styles/global';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > .bar {
+    padding-left: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+
+    &.orange {
+      border-left: 3px solid $orange-color;
+    }
+    &.blue {
+      border-left: 3px solid $primary-color;
+    }
+    &.green {
+      border-left: 3px solid $green-color;
+    }
+  }
+  > .link {
+    a {
+      font-weight: 600;
+      font-size: 14px;
+      color: $primary-color;
+    }
+  }
+}

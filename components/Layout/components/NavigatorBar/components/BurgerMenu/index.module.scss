@@ -1,0 +1,9 @@
+@import 'styles/global';
+
+.container {
+  display: none;
+  @include media('<=tablet') {
+    display: block;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,66 @@
+@import 'styles/global.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+
+  &.blue {
+    background-color: $dark-blue-70;
+    color: white;
+  }
+
+  > .tag {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  > .image {
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  > .topic {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  > .intro {
+  }
+
+  > .actions {
+    margin-top: 25px;
+    display: flex;
+    column-gap: 20px;
+  }
+}
+
+@include media('<=tablet') {
+  .container {
+    margin: 0 20px;
+    > .intro {
+      display: none;
+    }
+    > .tag {
+      margin-top: 35px;
+      order: 2;
+    }
+    > .image {
+      order: 1;
+    }
+    > .topic {
+      order: 3;
+    }
+    > .author {
+      order: 4;
+    }
+    > .actions {
+      justify-content: space-between;
+      order: 5;
+    }
+  }
+}

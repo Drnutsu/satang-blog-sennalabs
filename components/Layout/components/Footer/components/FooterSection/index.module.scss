@@ -1,0 +1,36 @@
+@import 'styles/global.scss';
+
+.container {
+  display: grid;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    > .title-text {
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+    }
+    > .title-nav {
+      color: white;
+      font-size: 20px;
+    }
+  }
+  .grid-content {
+    display: contents;
+    > .menu {
+      &.is-first {
+        margin-top: 15px;
+      }
+      > a {
+        line-height: 26px;
+        font-size: 14px;
+        color: #707690;
+      }
+    }
+  }
+}
+@include media('<=tablet') {
+  .container {
+    grid-row-gap: 10px;
+  }
+}

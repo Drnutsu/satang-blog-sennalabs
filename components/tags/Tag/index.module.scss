@@ -1,0 +1,23 @@
+@import '../../../styles/global';
+
+.container {
+  padding: 10px 15px;
+  border-radius: 100px;
+  width: fit-content;
+  &.green {
+    color: #4fbd00;
+    background: rgba(79, 189, 0, 0.1);
+  }
+  &.red {
+    color: #ff1255;
+    background: rgba(255, 18, 85, 0.1);
+  }
+  &.blue {
+    color: #006cff;
+    background: rgba(0, 108, 255, 0.1);
+  }
+  &.pink {
+    color: #9b51e0;
+    background: rgba(155, 81, 224, 0.05);
+  }
+}
