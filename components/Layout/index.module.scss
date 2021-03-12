@@ -3,5 +3,6 @@
 .container {
   > .body {
     background: #fafafa;
+    min-height: calc(100vh - 654px);
   }
 }

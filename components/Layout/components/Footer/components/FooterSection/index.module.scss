@@ -29,7 +29,7 @@
     }
   }
 }
-@include media('<=tablet') {
+@include media('<tablet') {
   .container {
     grid-row-gap: 10px;
   }

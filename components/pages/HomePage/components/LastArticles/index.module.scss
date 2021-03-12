@@ -3,21 +3,10 @@
 .container {
   margin: 50px 0;
 
-  > .blogs {
-    margin: 50px 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 18px;
-    grid-row-gap: 40px;
-  }
-
   > .pagination {
     display: flex;
     justify-content: center;
   }
 }
-@include media('<=tablet') {
-  .container > .blogs {
-    grid-template-columns: 1fr;
-  }
+@include media('<tablet') {
 }

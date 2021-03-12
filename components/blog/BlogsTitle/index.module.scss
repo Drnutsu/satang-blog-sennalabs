@@ -28,3 +28,11 @@
     }
   }
 }
+
+@include media('<tablet') {
+  .container {
+    > .bar {
+      border-left: unset;
+    }
+  }
+}

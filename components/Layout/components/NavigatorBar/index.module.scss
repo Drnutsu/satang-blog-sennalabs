@@ -36,7 +36,7 @@
     cursor: pointer;
   }
 }
-@include media('<=tablet') {
+@include media('<tablet') {
   .container > .menu > .on-right,
   .container > .menu > .on-left {
     display: none;
