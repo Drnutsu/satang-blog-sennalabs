@@ -1,8 +1,9 @@
 import React from 'react'
 
-import Logo from 'public/images/logo.svg'
+import Logo from 'public/assets/images/logo.svg'
 import styles from './index.module.scss'
 import Menu from './components/Menu'
+import BurgerMenu from './components/BurgerMenu'
 
 const NavigatorBar = () => {
   return (
@@ -12,15 +13,16 @@ const NavigatorBar = () => {
       </div>
       <div className={styles.menu}>
         <div className={styles['on-left']}>
-          <Menu isActive={true} title="Exchange" />
-          <Menu isActive={false} title="Blog" />
-          <Menu isActive={false} title="About us" />
+          <Menu isActive title="Exchange" />
+          <Menu title="Blog" />
+          <Menu title="About us" />
         </div>
         <div className={styles['on-right']}>
           <Menu title="Login" />
           <Menu isButton title="Register" />
           <Menu title="English/USD" />
         </div>
+        <BurgerMenu />
       </div>
     </div>
   )

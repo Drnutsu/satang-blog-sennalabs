@@ -5,6 +5,16 @@
     background-color: #111111;
     padding: 10px;
     display: flex;
-    justify-content: space-evenly;
+    column-gap: 15px;
+    justify-content: space-between;
+    overflow-y: auto;
+    > div {
+      width: fit-content;
+    }
+  }
+}
+@include media('<=tablet') {
+  .container > .tag-suggestion {
+    justify-content: flex-start;
   }
 }

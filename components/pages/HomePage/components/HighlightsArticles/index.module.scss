@@ -21,3 +21,24 @@
     }
   }
 }
+
+@include media('<=tablet') {
+  .container {
+    > .main-grid {
+      grid-template-columns: 1fr;
+      > .blue-sections {
+        display: flex;
+        overflow-y: auto;
+        > div {
+          &:last-child{
+            margin: 0;
+          }
+          min-width: 280px;
+        }
+      }
+      > .big-column {
+        grid-row: unset;
+      }
+    }
+  }
+}

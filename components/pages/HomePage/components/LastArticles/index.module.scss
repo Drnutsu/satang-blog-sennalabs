@@ -16,3 +16,8 @@
     justify-content: center;
   }
 }
+@include media('<=tablet') {
+  .container > .blogs {
+    grid-template-columns: 1fr;
+  }
+}

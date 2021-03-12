@@ -13,3 +13,8 @@
     background: #c4c4c4;
   }
 }
+@include media('<=tablet') {
+  .container {
+    margin: 50px auto;
+  }
+}

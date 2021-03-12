@@ -2,41 +2,77 @@
 
 .container {
   background-color: #111111;
-  min-height: 420px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  > .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 60px;
-    justify-items: center;
-    .topic {
-      font-weight: 600;
-      font-size: 18px;
-      color: white;
-    }
-    > .footer-section {
-      display: flex;
-      flex-direction: column;
-
-      > .menu {
-        &.is-first {
-          margin-top: 15px;
+  flex-direction: column;
+  > .menu {
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 60px;
+      justify-items: center;
+      .topic {
+        font-weight: 600;
+        font-size: 18px;
+        color: white;
+      }
+      > .contract-us {
+        > .icons {
+          margin-top: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 24px;
+          row-gap: 20px;
         }
-        line-height: 26px;
-        font-size: 14px;
-        color: #8b8e99;
       }
     }
-    > .contract-us {
-      > .icons {
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 24px;
-        row-gap: 20px;
+  }
+  > .copy-right-section {
+    margin-bottom: 72px;
+    color: #707690;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@include media('<=tablet') {
+  .container {
+    > .menu {
+      min-height: unset;
+
+      > .footer-grid {
+        width: 100%;
+        padding: 20px 20px 40px 20px;
+        grid-template-columns: 1fr;
+        justify-items: unset;
+
+        > div:first-child {
+          display: none;
+        }
+
+        > div {
+          margin-top: 25px;
+        }
+
+        > .contract-us {
+          margin-top: 20px;
+
+          > .icons {
+            justify-content: space-between;
+
+            > svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
       }
+    }
+    > .copy-right-section {
+      flex-direction: column;
     }
   }
 }

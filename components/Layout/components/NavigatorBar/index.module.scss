@@ -1,6 +1,7 @@
 @import 'styles/global.scss';
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: $header-menu-bg-color;
@@ -33,5 +34,12 @@
       justify-content: space-between;
     }
     cursor: pointer;
+  }
+}
+@include media('<=tablet') {
+  .container > .menu > .on-right,
+  .container > .menu > .on-left {
+    display: none;
+    position: absolute;
   }
 }

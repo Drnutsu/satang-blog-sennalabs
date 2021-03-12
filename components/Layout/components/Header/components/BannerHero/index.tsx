@@ -1,7 +1,7 @@
 import React from 'react'
-import HeaderLeftDecorators from 'public/images/header-left-decorators.svg'
-import HeaderRightDecorators from 'public/images/header-right-decorators.svg'
-import Banner from 'public/images/banner.svg'
+import HeaderLeftDecorators from 'public/assets/images/header-left-decorators.svg'
+import HeaderRightDecorators from 'public/assets/images/header-right-decorators.svg'
+import Banner from 'public/assets/images/banner.svg'
 
 import styles from './index.module.scss'
 import Tag from 'components/tags/Tag'
@@ -34,33 +34,33 @@ const BannerHero = () => {
           <MiniBlogCard
             tag={{ color: 'pink', title: "Editor's Pick" }}
             blogAuthor={{
-                duration: '1 min',
-                date: 'May 15, 2021',
-                name: 'Jane Smith',
-                photoUrl:
-                    'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
+              duration: '1 min',
+              date: 'May 15, 2021',
+              name: 'Jane Smith',
+              photoUrl:
+                'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
             }}
             title="Astronomers Detect Most Energetic Outflow "
           />
           <MiniBlogCard
             tag={{ color: 'green', title: 'ethereum' }}
             blogAuthor={{
-                duration: '1 min',
-                date: 'May 15, 2021',
-                name: 'Jane Smith',
-                photoUrl:
-                    'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
+              duration: '1 min',
+              date: 'May 15, 2021',
+              name: 'Jane Smith',
+              photoUrl:
+                'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
             }}
             title="Astronomers Detect Most Energetic Outflow "
           />
           <MiniBlogCard
             tag={{ color: 'blue', title: 'bitcoin' }}
             blogAuthor={{
-                duration: '1 min',
-                date: 'May 15, 2021',
-                name: 'Jane Smith',
-                photoUrl:
-                    'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
+              duration: '1 min',
+              date: 'May 15, 2021',
+              name: 'Jane Smith',
+              photoUrl:
+                'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
             }}
             title="Astronomers Detect Most Energetic Outflow "
           />

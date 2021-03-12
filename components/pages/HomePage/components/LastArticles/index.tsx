@@ -10,8 +10,9 @@ const LastArticles = ({ articles, withPagination }: LastArticleProps) => {
     <div className={styles.container}>
       <BlogsTitle barColor="orange" viewMoreUrl={'/'} title="Last articles" />
       <div className={styles.blogs}>
-        {articles.map((article) => (
+        {articles.map((article, index) => (
           <BlogCard
+            key={article.title + index}
             tag={article.tag}
             title={article.title}
             intro={article.intro}

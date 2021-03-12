@@ -38,3 +38,29 @@
     column-gap: 20px;
   }
 }
+
+@include media('<=tablet') {
+  .container {
+    margin: 0 20px;
+    > .intro {
+      display: none;
+    }
+    > .tag {
+      margin-top: 35px;
+      order: 2;
+    }
+    > .image {
+      order: 1;
+    }
+    > .topic {
+      order: 3;
+    }
+    > .author {
+      order: 4;
+    }
+    > .actions {
+      justify-content: space-between;
+      order: 5;
+    }
+  }
+}

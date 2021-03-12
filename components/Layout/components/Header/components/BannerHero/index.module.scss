@@ -36,7 +36,19 @@
       display: flex;
       justify-content: space-between;
       margin: 30px 0;
-
     }
+  }
+}
+@include media('<=tablet') {
+  .container > .slider > .hero-slider > .right-side,
+  .container > .slider > .recommend-blog {
+    display: none;
+  }
+  .container > .slider {
+    margin-top: unset;
+    padding: 60px 40px;
+  }
+  .container svg {
+    display: none;
   }
 }
