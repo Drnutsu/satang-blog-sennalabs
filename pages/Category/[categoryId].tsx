@@ -4,7 +4,7 @@ import BlogsList from 'components/blog/BlogsList'
 import Pagination from 'components/Pagination'
 import styles from './index.module.scss'
 
-const CategoryPage = ({ authorId }) => {
+const CategoryPage = () => {
   const articlesMockup = [
     {
       tag: { title: 'บทวิเคราะห์', color: 'blue' },

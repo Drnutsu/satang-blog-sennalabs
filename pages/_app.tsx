@@ -28,10 +28,10 @@ export default MyApp
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await NextApp.getInitialProps(appContext)
-
+  console.log(' appContext : ', appContext)
   const userAgent: string =
-    (appContext.ctx.req?.headers['user-agent'] as string) ??
-    window.navigator.userAgent
+    (appContext.ctx.req?.headers['user-agent'] as string) || 'SSR'
+  // window.navigator.userAgent
 
   return { ...appProps, userAgent }
 }

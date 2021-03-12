@@ -17,10 +17,11 @@ export default function AppWrapper({
   const router = useRouter()
   const newLang = router.locale
   const [{ language }, { switchLanguage, updateLanguage }] = useConfig()
-  const lang =
-    typeof window !== 'undefined'
-      ? window.location.pathname.split('/')[1] || 'en'
-      : ''
+  // const lang =
+  //   window && typeof window !== 'undefined'
+  //     ? window.location.pathname.split('/')[1] || 'en'
+  //     : ''
+  const lang = 'en'
   if (!supportedLanguagesMap[lang]) {
     // if language isn't defined from url, it will auto redirect from language in persist
     if (switchLanguage) {

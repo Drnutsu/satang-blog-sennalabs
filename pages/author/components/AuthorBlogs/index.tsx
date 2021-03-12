@@ -9,7 +9,7 @@ import Tag from 'components/tags/Tag'
 import { useDeviceDetector } from 'hooks/deviceDetector'
 
 import styles from './index.module.scss'
-import { BlogCardProps } from './interface'
+import { BlogCardProps } from '../../../../components/blog/BlogCard/interface'
 
 const BlogCard = ({
   tag,
