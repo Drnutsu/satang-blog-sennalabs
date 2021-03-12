@@ -1,0 +1,25 @@
+@import 'styles/global.scss';
+
+/**
+ * @NOTE: reuse for window media query (replace react-media)
+**/
+.hide_on_tablet {
+  @include media('<tablet') {
+    display: none;
+  }
+}
+.hide_on_not_tablet {
+  @include media('>=tablet') {
+    display: none;
+  }
+}
+.hide_on_desktop {
+  @include media('<desktop') {
+    display: none;
+  }
+}
+.hide_on_not_desktop {
+  @include media('>=desktop') {
+    display: none;
+  }
+}

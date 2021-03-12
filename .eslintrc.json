@@ -1,0 +1,43 @@
+{
+  "extends": ["airbnb-typescript", "plugin:prettier/recommended", "prettier"],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".ts", ".tsx"]
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [0],
+    "jsx-a11y/click-events-have-key-events": [0],
+    "jsx-a11y/no-noninteractive-element-interactions": [0],
+    "jsx-ally/mouse-events-have-key-events": [0],
+    "import/prefer-default-export": [0],
+    "react/no-array-index-key": [0],
+    "react/react-in-jsx-scope": [0],
+    "no-plusplus": [0],
+    "react/forbid-prop-types": [0],
+    "react-hooks/exhaustive-deps": [0],
+    "no-console": ["off"],
+    "no-param-reassign": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": ["error", { "enforceInMethodNames": false }],
+    "react/sort-comp": ["off"],
+    "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+    "semi": ["error", "never"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["."]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  }
+}

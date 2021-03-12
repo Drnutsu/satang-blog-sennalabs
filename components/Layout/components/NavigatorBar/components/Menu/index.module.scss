@@ -1,0 +1,25 @@
+@import 'styles/global.scss';
+
+.container {
+  color: $cool-gray-80-color;
+}
+
+.is-active {
+  color: white;
+  position: relative;
+  &:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    border-bottom: 2px solid #143fe4;
+  }
+}
+
+.is-button {
+  padding: 10px 15px;
+  color: white;
+  background: $primary-color;
+  border-radius: 4px;
+}

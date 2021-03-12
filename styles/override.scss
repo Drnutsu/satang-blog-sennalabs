@@ -1,0 +1,199 @@
+@import 'styles/global.scss';
+
+/**
+ * 
+ * @NOTE override antd
+ * Check and override antd variable in
+ * https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+ * before override class here
+ *
+ */
+:global(.ant-btn-background-ghost) {
+  border-color: $primary-color;
+  background-color: transparent;
+  color: currentColor;
+
+  &:not([disabled]) {
+    &:hover {
+      background: $primary-color;
+      color: $white-color;
+    }
+  }
+
+  &:is([disabled]) {
+    color: currentColor;
+  }
+
+  &.ant-btn-primary {
+    &[disabled] {
+      color: $satang-blue-20-color;
+      border-color: $satang-blue-20-color;
+      background-color: transparent !important;
+      &:hover {
+        color: $white-color;
+        border-color: $satang-blue-20-color;
+        background-color: $satang-blue-20-color !important;
+      }
+    }
+    &:focus {
+      background-color: transparent;
+      color: $primary-color;
+    }
+    &:active {
+      color: $white-color;
+      background-color: $satang-blue-90-color !important;
+      border-color: $satang-blue-90-color;
+    }
+    &:hover {
+      color: $white-color;
+      background-color: $primary-color !important;
+    }
+  }
+}
+
+// for dark theme.
+.dark {
+  .ant-btn-background-ghost {
+    color: $white-color;
+    &.ant-btn-primary {
+      &:hover {
+        background-color: $secondary-hover-color !important;
+        border-color: $secondary-hover-color;
+      }
+      &[disabled] {
+        color: rgba(255, 255, 255, 0.5);
+        &:hover {
+          color: rgba(255, 255, 255, 0.5);
+          background-color: transparent !important;
+        }
+      }
+      &:focus {
+        color: $white-color;
+      }
+    }
+  }
+}
+
+:glbaol(.ant-btn-default) {
+  color: $black-color;
+  border-color: $cool-gray-60-color;
+  &:hover {
+    color: $black-color;
+    background-color: $cool-gray-30-color;
+    border-color: $cool-gray-30-color;
+  }
+  &:active {
+    color: $black-color;
+    background-color: $cool-gray-50-color;
+    border-color: $cool-gray-50-color;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: $cool-gray-60-color;
+    border-color: $cool-gray-60-color;
+    color: $black-color;
+  }
+  &:focus {
+    color: $black-color;
+    border-color: $cool-gray-60-color;
+  }
+}
+
+:global(.ant-btn-primary) {
+  color: $white-color;
+  &:hover {
+    color: $white-color;
+    background-color: $satang-blue-80-color;
+    border-color: $satang-blue-80-color;
+  }
+  &:active {
+    color: $white-color;
+    background-color: $satang-blue-90-color;
+    border-color: $satang-blue-90-color;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: $satang-blue-20-color;
+    border-color: $satang-blue-20-color;
+    color: $white-color;
+  }
+}
+
+:global(.ant-btn-dangerous) {
+  background: $red-color;
+  border-color: $red-color;
+  color: $white-color;
+  &:hover {
+    background: $red-80-color;
+    border-color: $red-80-color;
+    color: $white-color;
+  }
+  &:active {
+    background: $red-90-color;
+    border-color: $red-90-color;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background: $red-20-color;
+    border-color: $red-20-color;
+    color: $white-color;
+  }
+  &:focus {
+    background: $red-color;
+    border-color: $red-color;
+    color: $white-color;
+  }
+}
+
+:global(.ant-btn-success) {
+  background-color: $green-color;
+  color: $white-color;
+  &:hover {
+    background-color: $green-80-color;
+    border-color: $green-80-color;
+    color: $white-color;
+  }
+  &:active {
+    background-color: $green-90-color;
+    border-color: $green-90-color;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: $green-30-color;
+    border-color: $green-30-color;
+    color: $white-color;
+  }
+  &:focus {
+    background-color: $green-color;
+    color: $white-color;
+  }
+}
+
+:global(.ant-btn-warning) {
+  background-color: $orange-60-color;
+  color: $white-color;
+  &:hover {
+    background-color: $orange-80-color;
+    border-color: $orange-80-color;
+    color: $white-color;
+  }
+  &:active {
+    background-color: $orange-90-color;
+    border-color: $orange-90-color;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: $orange-30-color;
+    border-color: $orange-30-color;
+    color: $white-color;
+  }
+  &:focus {
+    background-color: $orange-60-color;
+    color: $white-color;
+  }
+}
