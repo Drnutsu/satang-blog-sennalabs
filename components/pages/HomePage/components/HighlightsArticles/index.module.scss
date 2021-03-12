@@ -22,7 +22,7 @@
   }
 }
 
-@include media('<=tablet') {
+@include media('<tablet') {
   .container {
     > .main-grid {
       grid-template-columns: 1fr;

@@ -2,7 +2,7 @@
 
 .container {
   display: none;
-  @include media('<=tablet') {
+  @include media('<tablet') {
     display: block;
     margin-left: auto;
   }

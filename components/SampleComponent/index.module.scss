@@ -1,0 +1,9 @@
+@import 'styles/global.scss';
+
+.container {
+}
+
+@include media('<tablet') {
+  .container {
+  }
+}
