@@ -1,4 +1,10 @@
+import {
+  ArticleComponentType,
+  ComponentQueryBase,
+} from '../../../../../interfaces/blog'
+
 export type LastArticleProps = {
-  articles: any[]
+  articles: ComponentQueryBase<ArticleComponentType>[]
+
   withPagination?: boolean
 }

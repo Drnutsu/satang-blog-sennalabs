@@ -130,7 +130,7 @@ const AuthorBlogPage = ({ authorId }) => {
     <div className={styles.container}>
       <div className={styles.title}>Published by Author</div>
       <AuthorCard />
-      <BlogsList articles={articlesMockup} />
+      {/*<BlogsList articles={articlesMockup} />*/}
       <div className={styles.pagination}>
         <Pagination />
       </div>

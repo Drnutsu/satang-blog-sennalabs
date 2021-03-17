@@ -1,12 +1,13 @@
 import axios, { AxiosInstance } from 'axios'
 import { STORYBLOK_BASE_URL, STORYBLOK_PUBLIC_TOKEN } from 'constants/env'
 import { methodParams, requestParams } from '../interfaces/api'
-import { configSelectors } from '../store/config'
-import { store } from '../store'
+// import { configSelectors } from '../store/config'
 
 class ApiClient {
   private _client: AxiosInstance
+
   private _isCacheValidate: Boolean
+
   constructor() {
     this._isCacheValidate = false
     this._client = axios.create({
@@ -19,6 +20,7 @@ class ApiClient {
 
     this.getCV().then((cv: number) => this.setupClient(cv))
   }
+
   async getCV(): Promise<number> {
     const cv = await this._client.get('spaces/me', {
       params: { token: STORYBLOK_PUBLIC_TOKEN },
@@ -28,25 +30,27 @@ class ApiClient {
 
   setupClient(cv: number) {
     this._client.interceptors.request.use((config) => {
-      const lang = configSelectors.language(store.getState())
+      // const lang = configSelectors.language(store.getState())
       return {
         ...config,
         params: {
           ...config.params,
           token: STORYBLOK_PUBLIC_TOKEN,
           cv,
-          starts_with: `${lang}/*`,
+          // starts_with: `${lang}/*`,
         },
       }
     })
+
     this._isCacheValidate = true
   }
+
   async client(options: requestParams) {
     if (!this._isCacheValidate) {
       const cv = await this.getCV()
       this.setupClient(cv)
     }
-    return await this._client.request(options)
+    return this._client.request(options)
   }
 }
 

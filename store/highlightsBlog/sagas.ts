@@ -1,6 +1,6 @@
 import { call, takeEvery, put } from 'redux-saga/effects'
-import { highlightBlogActions } from './reducers'
 import { blogApi } from 'api'
+import { highlightBlogActions } from './reducers'
 
 function* fetchHighlights() {
   try {
@@ -24,4 +24,4 @@ const highlightsBlogSagas = {
   watchFetchHighlightsBlog,
 }
 
-export default highlightsBlogSagas
+export { highlightsBlogSagas }

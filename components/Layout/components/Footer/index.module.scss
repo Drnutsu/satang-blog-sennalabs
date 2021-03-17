@@ -28,6 +28,12 @@
           row-gap: 20px;
         }
       }
+
+      > .switch-lang {
+        > select {
+          padding: 8px;
+        }
+      }
     }
   }
   > .copy-right-section {
