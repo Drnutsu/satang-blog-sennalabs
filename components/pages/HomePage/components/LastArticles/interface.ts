@@ -1,10 +1,7 @@
-import {
-  ArticleComponentType,
-  ComponentQueryBase,
-} from '../../../../../interfaces/blog'
+import { ArticleStories } from '../../../../../interfaces/pages/home'
 
-export type LastArticleProps = {
-  articles: ComponentQueryBase<ArticleComponentType>[]
+export type ArticlesProps = {
+  articleStories: ArticleStories
 
   withPagination?: boolean
 }

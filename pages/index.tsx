@@ -1,24 +1,55 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-
 import { StoryblokAPIService } from 'api/storyblokAPIService'
-// import DynamicComponent from 'components/DynamicComponent'
+import {
+  ArticleComponentType,
+  ComponentQueryBase,
+  HomePageQueryComponent,
+} from 'interfaces/blog'
+import HomePage from 'components/pages/HomePage'
+import useStoryblok from 'hooks/storyblok'
+import { reloadStoryblokRelational } from 'utils/homeStory/reloadStoryblokRelational'
+import {
+  articleRelation,
+  homeRelational,
+} from '../constants/storyblokRelational'
 
-import { HomePageQueryComponent } from '../interfaces/blog'
-// import useStoryblok from '../hooks/storyblok'
-import HomePage from '../components/pages/HomePage'
+const IndexPage = ({
+  story,
+  lastArticlesStories,
+}: {
+  story: HomePageQueryComponent
+  lastArticlesStories: {
+    page: number
+    totalPage: number
+    stories: ComponentQueryBase<ArticleComponentType>[]
+  }
+}) => {
+  const homeQueryRelation = [
+    'HeroBanner.categories',
+    'HeroBanner.featured_articles',
+    'HomeBody.top_article_section',
+    'HomeBody.last_articles_top',
+    'HomeBody.highlight_section',
+  ]
+  const homeStory: HomePageQueryComponent = useStoryblok(
+    story,
+    homeQueryRelation,
+    reloadStoryblokRelational,
+  )
 
-const IndexPage = ({ story }: { story: HomePageQueryComponent }) => {
-  // const storyy:HomePageQueryComponent = useStoryblok(story)
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Satang Blogs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HomePage contentBody={story.content} />
+        <HomePage
+          contentBody={homeStory.content}
+          lastArticlesStories={lastArticlesStories}
+        />
       </main>
     </div>
   )
@@ -28,90 +59,61 @@ export default IndexPage
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   // the slug of the story
+  const { page = '1' } = context.query
+  const perPage = 9
+  console.log('page:::', page)
   const lang = context.locale
   const slug = `${lang === 'th' ? `${lang}/` : ''}`
-  // the storyblok params
-  const params = {
+  const defaultParam = {
     version: 'draft', // or 'published'
     cv: 0,
-    resolve_relations:
-      'HeroBanner.categories,HeroBanner.featured_articles,HomeBody.top_article_section,HomeBody.last_articles_top,HomeBody.highlight_section',
   }
+  // the storyblok params
 
   // checks if Next.js is in preview mode
   if (context.preview) {
     // loads the draft version
-    params.version = 'draft'
+    defaultParam.version = 'draft'
     // appends the cache version to get the latest content
-    params.cv = Date.now()
+    defaultParam.cv = Date.now()
+  }
+
+  const homePageStoryParams = {
+    ...defaultParam,
+    resolve_relations: homeRelational,
   }
 
   // loads the story from the Storyblok API
-  const { data } = await StoryblokAPIService.get(
+  const { data: homePageStory } = await StoryblokAPIService.get(
     `cdn/stories/${slug}home`,
-    params,
+    homePageStoryParams,
   )
-  // return the story from Storyblok and whether preview mode is active
 
-  const articleSlug = `articles`
-  const articleParams = {
-    version: 'draft', // or 'published'
-    cv: 0,
-    resolve_relations: 'article.author,article.category',
+  const lastArticlesStoryParams = {
+    ...defaultParam,
+    sort_by: 'published_at',
+    per_page: perPage,
+    page,
+    starts_with: `${slug}articles`,
+    resolve_relations: articleRelation,
   }
-  const { story }: { story: HomePageQueryComponent } = data
-  const featuredArticlesPromise = story.content.body[0].featured_articles.map(
-    (article) => {
-      return StoryblokAPIService.get(
-        `cdn/stories/${slug}${articleSlug}/${article.slug}`,
-        articleParams,
-      )
-    },
+
+  // loads the story from the Storyblok API
+  const { data: lastArticlesStories, headers } = await StoryblokAPIService.get(
+    `cdn/stories`,
+    lastArticlesStoryParams,
   )
 
-  const lastThreeArticlesPromise = story.content.body[1].last_articles_top.map(
-    (article) => {
-      return StoryblokAPIService.get(
-        `cdn/stories/${slug}${articleSlug}/${article.slug}`,
-        articleParams,
-      )
-    },
-  )
-
-  const highlightArticlesPromise = story.content.body[1].highlight_section.map(
-    (article) => {
-      return StoryblokAPIService.get(
-        `cdn/stories/${slug}${articleSlug}/${article.slug}`,
-        articleParams,
-      )
-    },
-  )
-
-  const topArticleSlug = story.content.body[1].top_article_section.slug
-  const { data: topArticle } = await StoryblokAPIService.get(
-    `cdn/stories/${slug}${articleSlug}/${topArticleSlug}`,
-    articleParams,
-  )
-
-  const featuredArticles = await Promise.all(featuredArticlesPromise)
-  const lastThreeArticles = await Promise.all(lastThreeArticlesPromise)
-  const highlightArticles = await Promise.all(highlightArticlesPromise)
-
-  story.content.body[0].featured_articles = featuredArticles.map(
-    (article) => article.data.story,
-  )
-  story.content.body[1].last_articles_top = lastThreeArticles.map(
-    (article) => article.data.story,
-  )
-  story.content.body[1].highlight_section = highlightArticles.map(
-    (article) => article.data.story,
-  )
-
-  story.content.body[1].top_article_section = topArticle.story
+  const homeStory = await reloadStoryblokRelational(homePageStory.story, lang)
 
   return {
     props: {
-      story: data ? data.story : false,
+      story: homePageStory ? homeStory : false,
+      lastArticlesStories: {
+        page: Number(page),
+        totalPage: Math.ceil(headers.total / perPage),
+        stories: lastArticlesStories.stories,
+      },
       preview: context.preview || false,
     },
     // revalidate: 10,

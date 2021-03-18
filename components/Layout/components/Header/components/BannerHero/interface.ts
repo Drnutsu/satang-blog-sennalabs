@@ -26,3 +26,4 @@ export type SliderRefs =
   | 'sliderArticleRef1'
   | 'sliderArticleRef2'
   | 'sliderArticleRef3'
+  | undefined

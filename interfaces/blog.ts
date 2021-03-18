@@ -32,15 +32,10 @@ export interface ArticleComponentType extends ContentBaseType {
 }
 
 export interface HeroBannerContentType extends ContentBaseType {
-  categories: ComponentQueryBase<CategoryContentType>[]
+  categories: ComponentQueryBase<CategoryComponentType>[]
   featured_articles: ComponentQueryBase<ArticleComponentType>[]
 }
 
-export interface CategoryContentType extends ContentBaseType {
-  category_key: string
-  component: string
-  title: string
-}
 
 export interface HomeBodyContentType extends ContentBaseType {
   last_articles_top: ComponentQueryBase<ArticleComponentType>[]

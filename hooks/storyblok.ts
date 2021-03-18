@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { StoryblokAPIService } from 'api/storyblokAPIService'
+import { useRouter } from 'next/router'
 
-export default function useStoryblok(originalStory) {
+export default function useStoryblok(originalStory, relational?, callback?) {
   const [story, setStory] = useState(originalStory)
+  const { locale } = useRouter()
 
   // adds the events for updating the visual editor
   // see https://www.storyblok.com/docs/guide/essentials/visual-editor#initializing-the-storyblok-js-bridge
@@ -21,7 +23,18 @@ export default function useStoryblok(originalStory) {
               event.story.content,
               event.story.id,
             )
-            setStory(event.story)
+            if (relational) {
+              window.storyblok.resolveRelations(
+                event.story,
+                relational,
+                async () => {
+                  console.log('update event', event.story)
+                  setStory(await callback(event.story, locale))
+                },
+              )
+            } else {
+              setStory(event.story)
+            }
           }
         }
       })

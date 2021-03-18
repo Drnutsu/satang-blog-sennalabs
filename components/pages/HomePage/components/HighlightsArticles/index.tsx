@@ -6,7 +6,12 @@ import { BlogsListProps } from '../../../../blog/BlogsList/interface'
 import BlogCardMapper from '../../../../blog/BlogCard/BlogCardPropsMapper'
 
 const HighlightArticles = ({ articles }: BlogsListProps) => {
-  const [highlightArticle1, highlightArticle2, ...restArticles] = articles
+  const [
+    highlightArticle1,
+    highlightArticle2,
+    middleHighlightArticle,
+    ...restArticles
+  ] = articles
   const highlightArticles = [highlightArticle1, highlightArticle2]
   return (
     <div className={styles.container}>
@@ -19,10 +24,11 @@ const HighlightArticles = ({ articles }: BlogsListProps) => {
           ))}
         </div>
         <div className={styles['big-column']}>
-          {restArticles.map((article, index) => (
-            <BlogCardMapper article={article} index={index} />
-          ))}
+          <BlogCardMapper article={middleHighlightArticle} />
         </div>
+        {restArticles.map((article, index) => (
+          <BlogCardMapper article={article} index={index} />
+        ))}
       </div>
     </div>
   )

@@ -3,7 +3,6 @@ import styles from './index.module.scss'
 import { BlogAuthor } from '../../interfaces/blog'
 
 const Author = ({ blogAuthor }: { blogAuthor: BlogAuthor }) => {
-  console.log('blogAuthor', blogAuthor)
   return (
     <div className={styles.container}>
       <div className={styles['author-photo']}>

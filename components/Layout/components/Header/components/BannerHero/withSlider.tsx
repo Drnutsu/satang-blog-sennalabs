@@ -31,7 +31,6 @@ export const withSlider = (
           return 'sliderArticleRef3'
         default:
       }
-      return 'sliderArticleRef1'
     }
 
     const sliderArticles: SliderArticle[] = [
@@ -60,13 +59,10 @@ export const withSlider = (
 
     const handleOnPaginate = (activePageIndex: number) => {
       const key = refSwitcher(activePageIndex)
-      console.log(
-        'sliderRefs[key].current.offsetLeft',
-        sliderRefs[key].current.offsetLeft - sliderParentRef.current.offsetLeft,
-      )
+
       sliderParentRef.current.scroll({
         left:
-          sliderRefs[key].current.offsetLeft -
+          sliderRefs[key!].current.offsetLeft -
           sliderParentRef.current.offsetLeft,
       })
 
