@@ -8,14 +8,17 @@
   background-color: white;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   align-items: center;
+  min-height: 52px;
 
   > .page-text {
     grid-column-start: 2;
+    text-align: center;
     > span {
       font-weight: 600;
     }
   }
-  > .next-btn {
+  > .btn {
+    cursor: pointer;
     text-align: center;
     margin: 5px;
     padding: 10px;

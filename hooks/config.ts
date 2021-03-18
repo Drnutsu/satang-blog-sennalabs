@@ -29,6 +29,8 @@ export default function useConifg() {
           `/${newLanguage}${router.pathname}`,
           `/${newLanguage}${router.asPath}`,
           {
+            scroll: false,
+            shallow: true,
             locale: newLanguage,
           },
         )

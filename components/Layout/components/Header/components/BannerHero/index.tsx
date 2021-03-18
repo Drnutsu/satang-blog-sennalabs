@@ -59,6 +59,7 @@ const BannerHero = ({
         <div className={styles['recommend-blog']}>
           {bannerContent.featured_articles.map((article, index) => (
             <MiniBlogCard
+              key={article.uuid}
               index={index}
               handleOnPaginate={handleOnPaginate}
               tag={{

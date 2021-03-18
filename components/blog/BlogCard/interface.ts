@@ -18,6 +18,6 @@ export type BlogCardProps = {
 
 export type BlogCardMapperProps = {
   article: ComponentQueryBase<ArticleComponentType>
-  index: number
+  index?: number
   isBlue?: boolean
 }

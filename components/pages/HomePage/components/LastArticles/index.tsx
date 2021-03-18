@@ -4,17 +4,20 @@ import Pagination from 'components/Pagination'
 import BlogsList from 'components/blog/BlogsList'
 
 import styles from './index.module.scss'
-import { LastArticleProps } from './interface'
+import { ArticlesProps } from './interface'
 
-const LastArticles = ({ articles, withPagination }: LastArticleProps) => {
+const LastArticles = ({ articleStories, withPagination }: ArticlesProps) => {
   return (
     <div className={styles.container}>
       <BlogsTitle barColor="orange" viewMoreUrl="/" title="Last articles" />
 
-      <BlogsList articles={articles} />
+      <BlogsList articles={articleStories.stories} />
       {withPagination && (
         <div className={styles.pagination}>
-          <Pagination />
+          <Pagination
+            page={articleStories.page}
+            totalPage={articleStories.totalPage}
+          />
         </div>
       )}
     </div>
