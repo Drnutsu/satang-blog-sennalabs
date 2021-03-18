@@ -5,7 +5,7 @@ import BlogsList from '../../components/blog/BlogsList'
 import Pagination from '../../components/Pagination'
 import React from 'react'
 
-const AuthorBlogPage = ({ authorId }) => {
+const AuthorBlogPage = () => {
   const articlesMockup = [
     {
       tag: { title: 'บทวิเคราะห์', color: 'blue' },
