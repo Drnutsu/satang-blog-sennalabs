@@ -1,5 +1,5 @@
 import { highlightBlogReducer, highlightBlogActions } from './reducers'
-import highlightsBlogSagas from './sagas'
+import { highlightsBlogSagas } from './sagas'
 import * as highlightsBlogSelectors from './selectors'
 
 export {

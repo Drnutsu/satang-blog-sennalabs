@@ -2,15 +2,15 @@ import { CombinedState, combineReducers } from 'redux'
 import { Action } from 'redux-actions'
 
 import { configReducer } from 'store/config'
-import { highlightBlogReducer } from 'store/highlightsBlog'
+import { homePageComponentReducer } from 'store/homePage'
 
 const appReducer = combineReducers({
   config: configReducer,
-  highlightBlog: highlightBlogReducer,
+  homePage: homePageComponentReducer,
 })
 
 const rootReducer = (
-  state: CombinedState<{ config: any; highlightBlog: any }> | undefined,
+  state: CombinedState<{ config: any; homePage: any }> | undefined,
   action: Action<any>,
 ) => {
   return appReducer(state, action)

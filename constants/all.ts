@@ -43,4 +43,9 @@ export const networkTransfer = {
   TRX: 'Tron TRC-20',
 }
 
+export const languageMapper = {
+  th: 'Thailand',
+  en: 'English',
+}
+
 export const defaultPairValue = 'btc_thb'

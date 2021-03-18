@@ -4,150 +4,39 @@ import BannerHero from '../../Layout/components/Header/components/BannerHero'
 import LastArticles from './components/LastArticles'
 import HighlightArticles from './components/HighlightsArticles'
 import MiddleContent from './MiddleContent'
+import { HomePageComponent } from '../../../interfaces/blog'
 
-const HomePage = () => {
-  const articlesMockup = [
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
+const HomePage = ({ contentBody }: { contentBody: HomePageComponent }) => {
+  const bannerContent = contentBody.body[0]
+  const {
+    top_article_section: middleArticle,
+    last_articles_top: lastThreeArticles,
+    highlight_section: highlightSection,
+  } = contentBody.body[1]
 
-    {
-      tag: { title: 'บทวิเคราะห์', color: 'blue' },
-      title: 'Skoltech Scientists Break Google’s',
-      intro:
-        'koltech Scientists Break Google’skoltech Scientists Break Google’s',
-      blogAuthor: {
-        duration: '1 min',
-        date: 'May 15, 2021',
-        name: 'Jane Smith',
-        photoUrl:
-          'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
-      },
-    },
-  ]
   return (
     <div className={styles.container}>
-      <BannerHero />
+      <BannerHero bannerContent={bannerContent} />
       <div className={styles['home-body']}>
-        <LastArticles articles={articlesMockup.slice(0, 3)} />
-        <HighlightArticles />
+        <LastArticles articles={lastThreeArticles} />
+        <HighlightArticles articles={highlightSection} />
       </div>
       <div className={styles['middle-content']}>
         <MiddleContent
-          tag={{ title: 'บทวิเคราะห์', color: 'red' }}
-          blogAuthor={{
-            duration: '1 min',
-            date: 'May 15, 2021',
-            name: 'Jane Smith',
-            photoUrl:
-              'https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg',
+          tag={{
+            title: middleArticle.content.category.content.title,
+            color: middleArticle.content.category.content.color,
           }}
-          title="Amet minim mollit non deserunt ullamco est sit "
+          blogAuthor={{
+            name: middleArticle.content.author.content.name,
+            photoUrl: middleArticle.content.author.content.photo.filename,
+            readTime: middleArticle.content.read_time,
+          }}
+          title={middleArticle.content.title}
         />
       </div>
       <div className={styles['home-body']}>
-        <LastArticles withPagination articles={articlesMockup} />
+        <LastArticles withPagination articles={lastThreeArticles} />
       </div>
     </div>
   )

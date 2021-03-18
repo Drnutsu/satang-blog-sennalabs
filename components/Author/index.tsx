@@ -1,17 +1,19 @@
 import React from 'react'
 import styles from './index.module.scss'
+import { BlogAuthor } from '../../interfaces/blog'
 
-const Author = () => {
+const Author = ({ blogAuthor }: { blogAuthor: BlogAuthor }) => {
+  console.log('blogAuthor', blogAuthor)
   return (
     <div className={styles.container}>
       <div className={styles['author-photo']}>
-        <img src="https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg" />
+        <img src={blogAuthor.photoUrl} />
       </div>
       <div className={styles['author-detail']}>
-        <div>Name Jaaa</div>
-        <div>Date time</div>
+        <div>{blogAuthor.name}</div>
+        <div>{blogAuthor.publicAt!.toFormat('LLL dd yyyy')}</div>
       </div>
-      <div className={styles['time-ago']}>1 min</div>
+      <div className={styles['time-ago']}>{blogAuthor.readTime} min</div>
     </div>
   )
 }

@@ -6,4 +6,6 @@ export type MiniBlogCardProps = {
   title: string
   blogAuthor: BlogAuthor
   withProfilePhoto?: boolean
+  handleOnPaginate: (index: number) => void
+  index: number
 }

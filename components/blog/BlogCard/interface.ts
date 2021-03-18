@@ -1,4 +1,8 @@
-import { BlogAuthor } from '../../../interfaces/blog'
+import {
+  ArticleComponentType,
+  BlogAuthor,
+  ComponentQueryBase,
+} from '../../../interfaces/blog'
 import { Tag } from '../../../interfaces/tag'
 
 export type BlogCardProps = {
@@ -9,4 +13,11 @@ export type BlogCardProps = {
   isBlue?: boolean
   isNoIntro?: boolean
   isNoImage?: boolean
+  image: string
+}
+
+export type BlogCardMapperProps = {
+  article: ComponentQueryBase<ArticleComponentType>
+  index: number
+  isBlue?: boolean
 }

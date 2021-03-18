@@ -11,6 +11,7 @@ import InstagramIcon from 'public/assets/images/contract/instagram.svg'
 import styles from './index.module.scss'
 import FooterSection from './components/FooterSection'
 import { useDeviceDetector } from '../../../../hooks/deviceDetector'
+import LangSelectField from '../../../fields/LangSelectField'
 
 const Footer = () => {
   const { isMobile } = useDeviceDetector()
@@ -74,6 +75,17 @@ const Footer = () => {
               <InstagramIcon />
             </div>
           </div>
+          {isMobile && (
+            <div className={styles['switch-lang']}>
+              <LangSelectField
+                options={[
+                  { label: 'English', value: 'en' },
+                  { label: 'Thai', value: 'th' },
+                ]}
+                defaultValue="en"
+              />
+            </div>
+          )}
         </div>
       </div>
       <div className={styles['copy-right-section']}>

@@ -1,1 +1,5 @@
-export type PaginateProps = {}
+export type SliderPaginateProps = {
+  pagesAmount: number
+  onPaginate: (activePageIndex: number) => void
+  currentActivePage: number
+}

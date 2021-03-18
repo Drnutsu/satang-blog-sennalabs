@@ -1,6 +1,7 @@
 @import 'styles/global.scss';
 
 .container {
+  cursor: pointer;
   max-width: 277px;
   min-height: 180px;
   padding: 20px;
@@ -25,30 +26,14 @@
       }
       > .date {
         position: relative;
-        &:after {
-          right: -15px;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-
-          position: absolute;
-          content: '';
-          width: 4px;
-          height: 4px;
-          background: #111111;
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        > .dot {
+          width: 2px;
+          height: 2px;
           border-radius: 50%;
-        }
-        &:before {
-          left: -15px;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-          position: absolute;
-          content: '';
-          width: 4px;
-          height: 4px;
-          background: #111111;
-          border-radius: 50%;
+          background-color: black;
         }
       }
       > .duration {

@@ -18,6 +18,7 @@ const BlogCard = ({
   isBlue,
   isNoIntro,
   isNoImage,
+  blogAuthor,
 }: BlogCardProps) => {
   const { isMobile } = useDeviceDetector()
   return (
@@ -36,7 +37,7 @@ const BlogCard = ({
       <div className={styles.topic}>{title}</div>
       {!isNoIntro && <div className={styles.intro}>{intro}</div>}
       <div className={styles.author}>
-        <Author />
+        <Author blogAuthor={blogAuthor} />
       </div>
       <div className={styles.actions}>
         <HeartFilled />
