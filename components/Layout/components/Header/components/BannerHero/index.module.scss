@@ -12,28 +12,47 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    max-width: 926px;
-    > .hero-slider {
-      display: flex;
-      justify-content: space-between;
-      > .left-side {
-        .title {
-          font-size: 30px;
-          font-weight: bold;
+    max-width: 900px;
+    > .banner {
+      display: grid;
+      grid-template-columns: repeat(3, 100%);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      > .hero-slider {
+        display: flex;
+        justify-content: space-between;
+        > .left-side {
+          .title {
+            font-size: 30px;
+            font-weight: bold;
+          }
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          color: white;
+          justify-content: center;
+
+          > .slider-group {
+            width: 460px;
+            > .slider-text {
+              display: block;
+            }
+          }
         }
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        color: white;
-        justify-content: center;
-      }
-      > .right-side {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
+        > .right-side {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          img {
+            height: 377px;
+            max-width: 300px;
+            object-fit: cover;
+          }
+        }
       }
     }
     > .recommend-blog {
+      max-width: 900px;
       display: flex;
       justify-content: space-between;
       column-gap: 20px;
@@ -49,8 +68,17 @@
   .container > .slider {
     margin-top: unset;
     padding: 60px 40px;
+    width: 100%;
   }
-  .container svg {
+  .container > .slider > .hero-slider > .left-side {
+    width: 100%;
+    overflow-x: hidden;
+    > .slider-group {
+      width: unset;
+      grid-template-columns: repeat(3, 100%);
+    }
+  }
+  .container img {
     display: none;
   }
 }

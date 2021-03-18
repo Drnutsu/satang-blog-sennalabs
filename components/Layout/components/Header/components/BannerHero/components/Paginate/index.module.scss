@@ -7,10 +7,15 @@
   width: 70px;
   align-items: center;
   > .dot {
+    cursor: pointer;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #c4c4c4;
+
+    &.active {
+      background: #ffffff;
+    }
   }
 }
 @include media('<tablet') {

@@ -18,6 +18,8 @@ const BlogCard = ({
   isBlue,
   isNoIntro,
   isNoImage,
+  image,
+  blogAuthor,
 }: BlogCardProps) => {
   const { isMobile } = useDeviceDetector()
   return (
@@ -25,18 +27,15 @@ const BlogCard = ({
       <div className={styles.tag}>
         <Tag colorTheme={tag.color}>{tag.title}</Tag>
       </div>
-      {(!isNoImage || isMobile) && (
+      {(!isNoImage || (isMobile && !isBlue)) && (
         <div className={styles.image}>
-          <img
-            alt="blogPhoto"
-            src="https://img2.storyblok.com/800x0/f/43698/2240x1354/92e71f7bfc/article.jpg"
-          />
+          <img alt="blogPhoto" src={image} />
         </div>
       )}
       <div className={styles.topic}>{title}</div>
       {!isNoIntro && <div className={styles.intro}>{intro}</div>}
       <div className={styles.author}>
-        <Author />
+        <Author blogAuthor={blogAuthor} />
       </div>
       <div className={styles.actions}>
         <HeartFilled />

@@ -1,21 +1,15 @@
 import React from 'react'
 
 import styles from './index.module.scss'
-import BlogCard from '../BlogCard'
 import { BlogsListProps } from './interface'
+import BlogCardMapper from '../BlogCard/BlogCardPropsMapper'
 
 const BlogsList = ({ articles }: BlogsListProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.blogs}>
         {articles.map((article, index) => (
-          <BlogCard
-            key={article.title + index}
-            tag={article.tag}
-            title={article.title}
-            intro={article.intro}
-            blogAuthor={article.blogAuthor}
-          />
+          <BlogCardMapper article={article} index={index} />
         ))}
       </div>
     </div>

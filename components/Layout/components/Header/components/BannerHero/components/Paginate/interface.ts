@@ -1,1 +1,5 @@
-export type BannerHeroProps = {}
+export type SliderPaginateProps = {
+  pagesAmount: number
+  onPaginate: (activePageIndex: number) => void
+  currentActivePage: number
+}
