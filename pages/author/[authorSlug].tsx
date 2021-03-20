@@ -16,7 +16,7 @@ const AuthorBlogPage = ({
   authorStory,
 }: AuthorBlogPageProps) => {
   const authorRealTimeStory: ComponentQueryBase<AuthorComponentType> = useStoryblok(
-    authorStory,
+    { originalStory: authorStory },
   )
   return (
     <div className={styles.container}>

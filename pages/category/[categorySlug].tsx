@@ -12,7 +12,7 @@ import { CategotyBlogProps } from './interface'
 
 const CategoryPage = ({ articleStories, categoryStory }: CategotyBlogProps) => {
   const categoryRealTimeStory: ComponentQueryBase<CategoryComponentType> = useStoryblok(
-    categoryStory,
+    { originalStory: categoryStory },
   )
   return (
     <div className={styles.container}>

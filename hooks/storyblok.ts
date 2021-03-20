@@ -2,7 +2,17 @@ import { useEffect, useState } from 'react'
 import { StoryblokAPIService } from 'api/storyblokAPIService'
 import { useRouter } from 'next/router'
 
-export default function useStoryblok(originalStory, relational?, callback?) {
+interface UseStoryblok {
+  originalStory: any
+  relational?: string
+  callback?: (story: any | undefined, locale: string | undefined) => void
+}
+
+export default function useStoryblok({
+  originalStory,
+  relational,
+  callback,
+}: UseStoryblok) {
   const [story, setStory] = useState(originalStory)
   const { locale } = useRouter()
 
@@ -26,10 +36,12 @@ export default function useStoryblok(originalStory, relational?, callback?) {
             if (relational) {
               window.storyblok.resolveRelations(
                 event.story,
-                relational,
+                relational.split(','),
                 async () => {
                   console.log('update event', event.story)
-                  setStory(await callback(event.story, locale))
+                  if (callback) {
+                    setStory(await callback(event.story, locale))
+                  }
                 },
               )
             } else {
@@ -43,7 +55,7 @@ export default function useStoryblok(originalStory, relational?, callback?) {
 
   // appends the bridge script tag to our document
   // see https://www.storyblok.com/docs/guide/essentials/visual-editor#installing-the-storyblok-js-bridge
-  function addBridge(callback) {
+  function addBridge(callback: () => void) {
     // check if the script is already present
     const existingScript = document.getElementById('storyblokBridge')
     if (!existingScript) {

@@ -1,6 +1,5 @@
 import { BlogAuthor } from '../../../interfaces/blog'
 import { Tag } from '../../../interfaces/tag'
-import { DateTime } from 'luxon'
 
 export type MiniBlogCardProps = {
   tag: Tag

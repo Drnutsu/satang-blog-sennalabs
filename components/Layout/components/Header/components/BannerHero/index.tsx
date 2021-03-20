@@ -31,7 +31,7 @@ const BannerHero = ({
           {bannerContent.featured_articles.map((article, index) => (
             <div
               className={styles['hero-slider']}
-              ref={sliderRefs[refSwitcher(index)]}
+              ref={sliderRefs[refSwitcher(index)!]}
             >
               <div className={styles['left-side']}>
                 <div className={styles['slider-group']}>

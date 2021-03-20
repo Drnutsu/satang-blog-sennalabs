@@ -3,9 +3,9 @@ import React from 'react'
 import styles from './index.module.scss'
 import { AuthorCardProps } from './interface'
 
-const AuthorCard = ({ authorStory, isSmall }: AuthorCardProps) => {
+const AuthorCard = ({ authorStory }: AuthorCardProps) => {
   return (
-    <div className={`${styles.container} ${isSmall && styles['is-small']}`}>
+    <div className={styles.container}>
       <div className={styles['author-photo']}>
         <img src={authorStory.content.photo.filename} />
       </div>

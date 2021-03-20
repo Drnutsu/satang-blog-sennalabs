@@ -5,8 +5,6 @@ import LastArticles from './components/LastArticles'
 import HighlightArticles from './components/HighlightsArticles'
 import MiddleContent from './MiddleContent'
 import {
-  ArticleComponentType,
-  ComponentQueryBase,
   HomePageComponent,
 } from '../../../interfaces/blog'
 import { ArticleStories } from '../../../interfaces/pages/home'

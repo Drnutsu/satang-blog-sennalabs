@@ -26,18 +26,14 @@ const IndexPage = ({
     stories: ComponentQueryBase<ArticleComponentType>[]
   }
 }) => {
-  const homeQueryRelation = [
-    'HeroBanner.categories',
-    'HeroBanner.featured_articles',
-    'HomeBody.top_article_section',
-    'HomeBody.last_articles_top',
-    'HomeBody.highlight_section',
-  ]
-  const homeStory: HomePageQueryComponent = useStoryblok(
-    story,
-    homeQueryRelation,
-    reloadStoryblokRelational,
-  )
+  const homeQueryRelation =
+    'HeroBanner.categories,HeroBanner.featured_articles,HomeBody.top_article_section,HomeBody.last_articles_top,HomeBody.highlight_section'
+
+  const homeStory: HomePageQueryComponent = useStoryblok({
+    originalStory: story,
+    relational: homeQueryRelation,
+    callback: reloadStoryblokRelational,
+  })
 
   return (
     <div>
