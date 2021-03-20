@@ -10,6 +10,7 @@ import { AuthorBlogPageProps } from 'interfaces/pages/author'
 import { AuthorComponentType, ComponentQueryBase } from 'interfaces/blog'
 import useStoryblok from 'hooks/storyblok'
 import styles from './index.module.scss'
+import { STORYBLOK_VERSION } from '../../constants/env'
 
 const AuthorBlogPage = ({
   articleStories,
@@ -42,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const lang = context.locale
   const slug = `${lang === 'th' ? `${lang}/` : ''}`
   const defaultParam = {
-    version: 'draft', // or 'published'
+    version: STORYBLOK_VERSION, // or 'published'
     cv: 0,
   }
   // the storyblok params
@@ -50,7 +51,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   // checks if Next.js is in preview mode
   if (context.preview) {
     // loads the draft version
-    defaultParam.version = 'draft'
+    defaultParam.version = STORYBLOK_VERSION
     // appends the cache version to get the latest content
     defaultParam.cv = Date.now()
   }

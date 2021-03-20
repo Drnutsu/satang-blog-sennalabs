@@ -12,6 +12,7 @@ import AppWrapper from './_app-wrapper'
 import { StoryblokAPIService } from '../api/storyblokAPIService'
 import { CategoriesProvider } from '../hooks/categories'
 import { CategoryComponentType, ComponentQueryBase } from '../interfaces/blog'
+import { STORYBLOK_VERSION } from '../constants/env'
 
 interface AppPropsWithUserAgent extends AppProps {
   userAgent: string
@@ -48,7 +49,7 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   const lang = appContext.router.locale
   const slug = `${lang === 'th' ? `${lang}/` : ''}`
   const defaultParam = {
-    version: 'draft', // or 'published'
+    version: STORYBLOK_VERSION, // or 'published'
     cv: Date.now(),
   }
 

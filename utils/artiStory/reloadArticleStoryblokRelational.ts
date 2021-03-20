@@ -1,13 +1,14 @@
 import { ArticleComponentType, ComponentQueryBase } from '../../interfaces/blog'
 import { StoryblokAPIService } from '../../api/storyblokAPIService'
 import { articleRelation } from '../../constants/storyblokRelational'
+import { STORYBLOK_VERSION } from '../../constants/env'
 
 export const reloadArticleStoryblokRelational = async (
   story: ComponentQueryBase<ArticleComponentType>,
   lang: string | undefined,
 ) => {
   const defaultParam = {
-    version: 'draft', // or 'published'
+    version: STORYBLOK_VERSION, // or 'published'
     cv: Date.now(),
   }
 
