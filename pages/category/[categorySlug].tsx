@@ -6,9 +6,9 @@ import { StoryblokAPIService } from 'api/storyblokAPIService'
 import { articleRelation } from 'constants/storyblokRelational'
 import useStoryblok from 'hooks/storyblok'
 import { CategoryComponentType, ComponentQueryBase } from 'interfaces/blog'
+import { CategotyBlogProps } from 'interfaces/pages/category'
 
 import styles from './index.module.scss'
-import { CategotyBlogProps } from './interface'
 
 const CategoryPage = ({ articleStories, categoryStory }: CategotyBlogProps) => {
   const categoryRealTimeStory: ComponentQueryBase<CategoryComponentType> = useStoryblok(

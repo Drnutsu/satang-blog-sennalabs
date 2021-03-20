@@ -1,15 +1,15 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 
+import AuthorCard from 'components/pages/AuthorPage/AuthorCard'
+import Pagination from 'components/Pagination'
+import { StoryblokAPIService } from 'api/storyblokAPIService'
+import { articleRelation } from 'constants/storyblokRelational'
+import BlogsList from 'components/blog/BlogsList'
+import { AuthorBlogPageProps } from 'interfaces/pages/author'
+import { AuthorComponentType, ComponentQueryBase } from 'interfaces/blog'
+import useStoryblok from 'hooks/storyblok'
 import styles from './index.module.scss'
-import AuthorCard from './components/AuthorCard'
-import Pagination from '../../components/Pagination'
-import { StoryblokAPIService } from '../../api/storyblokAPIService'
-import { articleRelation } from '../../constants/storyblokRelational'
-import BlogsList from '../../components/blog/BlogsList'
-import { AuthorBlogPageProps } from './interface'
-import { AuthorComponentType, ComponentQueryBase } from '../../interfaces/blog'
-import useStoryblok from '../../hooks/storyblok'
 
 const AuthorBlogPage = ({
   articleStories,

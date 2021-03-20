@@ -7,15 +7,15 @@ import LinkInIcon from 'public/assets/images/shareable-icons/link-in.svg'
 import EmailIcon from 'public/assets/images/shareable-icons/email.svg'
 import { DateTime } from 'luxon'
 
+import { StoryblokAPIService } from 'api/storyblokAPIService'
+import { articleRelation } from 'constants/storyblokRelational'
+import { ArticleBlogPageProps } from 'interfaces/pages/article'
+import { ArticleComponentType, ComponentQueryBase } from 'interfaces/blog'
+import useStoryblok from 'hooks/storyblok'
+import AuthorCard from 'components/pages/AuthorPage/AuthorCard'
+import BlogCardMapper from 'components/blog/BlogCard/BlogCardPropsMapper'
+import { reloadArticleStoryblokRelational } from 'utils/artiStory/reloadArticleStoryblokRelational'
 import styles from './index.module.scss'
-import { StoryblokAPIService } from '../../api/storyblokAPIService'
-import { articleRelation } from '../../constants/storyblokRelational'
-import { ArticleBlogPageProps } from './interface'
-import { ArticleComponentType, ComponentQueryBase } from '../../interfaces/blog'
-import useStoryblok from '../../hooks/storyblok'
-import AuthorCard from '../author/components/AuthorCard'
-import BlogCardMapper from '../../components/blog/BlogCard/BlogCardPropsMapper'
-import { reloadArticleStoryblokRelational } from '../../utils/artiStory/reloadArticleStoryblokRelational'
 
 const ArticleBlogPage = ({ articleStory }: ArticleBlogPageProps) => {
   const articleRealTimeStory: ComponentQueryBase<ArticleComponentType> = useStoryblok(

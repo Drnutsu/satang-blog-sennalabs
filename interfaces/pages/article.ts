@@ -1,4 +1,4 @@
-import { ArticleComponentType, ComponentQueryBase } from '../../interfaces/blog'
+import { ArticleComponentType, ComponentQueryBase } from '../blog'
 
 export interface ArticleBlogPageProps {
   articleStory: ComponentQueryBase<ArticleComponentType>

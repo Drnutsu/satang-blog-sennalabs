@@ -2,7 +2,7 @@ import { ArticlesProps } from '../../components/pages/HomePage/components/LastAr
 import {
   CategoryComponentType,
   ComponentQueryBase,
-} from '../../interfaces/blog'
+} from '../blog'
 
 export interface CategotyBlogProps extends ArticlesProps {
   categoryStory: ComponentQueryBase<CategoryComponentType>
