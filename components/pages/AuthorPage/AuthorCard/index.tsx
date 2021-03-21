@@ -1,11 +1,18 @@
 import React from 'react'
+import { useAuthorNavigator } from 'hooks/navigator/author'
 
 import styles from './index.module.scss'
 import { AuthorCardProps } from './interface'
 
-const AuthorCard = ({ authorStory, isSmall }: AuthorCardProps) => {
+const AuthorCard = ({ authorStory, isSmall, slug }: AuthorCardProps) => {
+  const authorNavigate = useAuthorNavigator()
   return (
-    <div className={`${styles.container} ${isSmall && styles['is-small']}`}>
+    <div
+      role="button"
+      tabIndex={-1}
+      onClick={() => authorNavigate(slug!)}
+      className={`${styles.container} ${isSmall && styles['is-small']}`}
+    >
       <div className={styles['author-photo']}>
         <img src={authorStory.content.photo.filename} />
       </div>

@@ -6,12 +6,15 @@ import { useCategories } from '../../../../hooks/categories'
 
 const Header = () => {
   const { categories } = useCategories()
+
   return (
     <div className={styles.container}>
       <div className={styles['tag-suggestion']}>
-        <HeaderTag isActive>ทั้งหมด</HeaderTag>
+        <HeaderTag link="/" isActive>
+          ทั้งหมด
+        </HeaderTag>
         {categories.map((category) => (
-          <HeaderTag>{category.content.title}</HeaderTag>
+          <HeaderTag slug={category.slug}>{category.content.title}</HeaderTag>
         ))}
       </div>
     </div>

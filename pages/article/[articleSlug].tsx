@@ -93,6 +93,7 @@ const ArticleBlogPage = ({ articleStory }: ArticleBlogPageProps) => {
         </div>
         <div className={styles['right-section']}>
           <AuthorCard
+            slug={articleRealTimeStory.content.author.slug}
             isSmall
             authorStory={articleRealTimeStory.content.author}
           />

@@ -19,6 +19,7 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
       > .hero-slider {
+        cursor: pointer;
         display: flex;
         justify-content: space-between;
         > .left-side {

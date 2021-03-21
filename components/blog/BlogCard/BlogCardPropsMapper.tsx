@@ -7,6 +7,7 @@ import { BlogCardMapperProps } from './interface'
 const BlogCardMapper = ({ article, index, isBlue }: BlogCardMapperProps) => (
   <>
     <BlogCard
+      slug={article.slug}
       {...(index && { key: article.content.title + index })}
       tag={{
         color: article.content.category.content.color,
@@ -25,4 +26,5 @@ const BlogCardMapper = ({ article, index, isBlue }: BlogCardMapperProps) => (
     />
   </>
 )
+
 export default BlogCardMapper

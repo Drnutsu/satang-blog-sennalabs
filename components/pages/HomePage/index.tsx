@@ -1,13 +1,11 @@
 import React from 'react'
+import { HomePageComponent } from 'interfaces/blog'
+import { ArticleStories } from 'interfaces/pages/home'
 import styles from './index.module.scss'
 import BannerHero from '../../Layout/components/Header/components/BannerHero'
 import LastArticles from './components/LastArticles'
 import HighlightArticles from './components/HighlightsArticles'
 import MiddleContent from './MiddleContent'
-import {
-  HomePageComponent,
-} from '../../../interfaces/blog'
-import { ArticleStories } from '../../../interfaces/pages/home'
 
 const HomePage = ({
   contentBody,
@@ -32,6 +30,7 @@ const HomePage = ({
       </div>
       <div className={styles['middle-content']}>
         <MiddleContent
+          slug={middleArticle.slug}
           tag={{
             title: middleArticle.content.category.content.title,
             color: middleArticle.content.category.content.color,

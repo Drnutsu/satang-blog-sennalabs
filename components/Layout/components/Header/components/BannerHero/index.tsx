@@ -5,6 +5,7 @@ import HeaderRightDecorators from 'public/assets/images/header-right-decorators.
 
 import Tag from 'components/tags/Tag'
 import MiniBlogCard from 'components/blog/MiniBlogCard'
+import { useArticleNavigator } from 'hooks/navigator/article'
 
 import styles from './index.module.scss'
 import Paginate from './components/Paginate'
@@ -19,6 +20,7 @@ const BannerHero = ({
   refSwitcher,
   bannerContent,
 }: BannerHeroProps) => {
+  const articleNavigate = useArticleNavigator()
   // console.log(
   //   'bannerContent.featured_articles',
   //   bannerContent.featured_articles,
@@ -30,6 +32,7 @@ const BannerHero = ({
         <div className={styles.banner} ref={sliderParentRef}>
           {bannerContent.featured_articles.map((article, index) => (
             <div
+              onClick={() => articleNavigate(article.slug)}
               className={styles['hero-slider']}
               ref={sliderRefs[refSwitcher(index)!]}
             >

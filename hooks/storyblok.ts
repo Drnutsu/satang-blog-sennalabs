@@ -16,6 +16,10 @@ export default function useStoryblok({
   const [story, setStory] = useState(originalStory)
   const { locale } = useRouter()
 
+  useEffect(() => {
+    setStory(originalStory)
+  }, [originalStory])
+
   // adds the events for updating the visual editor
   // see https://www.storyblok.com/docs/guide/essentials/visual-editor#initializing-the-storyblok-js-bridge
   function initEventListeners() {

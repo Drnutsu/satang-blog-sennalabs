@@ -12,6 +12,7 @@ import styles from './index.module.scss'
 import { STORYBLOK_VERSION } from '../../constants/env'
 
 const CategoryPage = ({ articleStories, categoryStory }: CategotyBlogProps) => {
+  console.log('ford outer')
   const categoryRealTimeStory: ComponentQueryBase<CategoryComponentType> = useStoryblok(
     { originalStory: categoryStory },
   )
