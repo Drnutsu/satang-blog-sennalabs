@@ -14,6 +14,7 @@ export type BlogCardProps = {
   isNoIntro?: boolean
   isNoImage?: boolean
   image: string
+  slug: string
 }
 
 export type BlogCardMapperProps = {

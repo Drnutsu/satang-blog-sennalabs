@@ -5,4 +5,5 @@ export type MiddleContentProps = {
   tag: Tag
   blogAuthor: BlogAuthor
   title: string
+  slug: string
 }

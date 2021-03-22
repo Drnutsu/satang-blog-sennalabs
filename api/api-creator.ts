@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
-import { STORYBLOK_BASE_URL, STORYBLOK_PUBLIC_TOKEN } from 'constants/env'
+import { STORYBLOK_BASE_URL, STORYBLOK_TOKEN } from 'constants/env'
 import { methodParams, requestParams } from '../interfaces/api'
 // import { configSelectors } from '../store/config'
 
@@ -23,7 +23,7 @@ class ApiClient {
 
   async getCV(): Promise<number> {
     const cv = await this._client.get('spaces/me', {
-      params: { token: STORYBLOK_PUBLIC_TOKEN },
+      params: { token: STORYBLOK_TOKEN },
     })
     return cv.data.space.version
   }
@@ -35,7 +35,7 @@ class ApiClient {
         ...config,
         params: {
           ...config.params,
-          token: STORYBLOK_PUBLIC_TOKEN,
+          token: STORYBLOK_TOKEN,
           cv,
           // starts_with: `${lang}/*`,
         },

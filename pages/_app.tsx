@@ -9,16 +9,28 @@ import 'styles/index.scss'
 import 'styles/antd.less'
 
 import AppWrapper from './_app-wrapper'
+import { StoryblokAPIService } from '../api/storyblokAPIService'
+import { CategoriesProvider } from '../hooks/categories'
+import { CategoryComponentType, ComponentQueryBase } from '../interfaces/blog'
+import { STORYBLOK_VERSION } from '../constants/env'
 
 interface AppPropsWithUserAgent extends AppProps {
   userAgent: string
+  categoryStories: ComponentQueryBase<CategoryComponentType>[]
 }
 
-function MyApp({ Component, pageProps, userAgent }: AppPropsWithUserAgent) {
+function MyApp({
+  Component,
+  pageProps,
+  userAgent,
+  categoryStories,
+}: AppPropsWithUserAgent) {
   return (
     <Provider store={store}>
       <DeviceDetectorProvider userAgent={userAgent}>
-        <AppWrapper Component={Component} pageProps={pageProps} />
+        <CategoriesProvider categories={categoryStories}>
+          <AppWrapper Component={Component} pageProps={pageProps} />
+        </CategoriesProvider>
       </DeviceDetectorProvider>
     </Provider>
   )
@@ -33,5 +45,24 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
     (appContext.ctx.req?.headers['user-agent'] as string) || 'SSR'
   // window.navigator.userAgent
 
-  return { ...appProps, userAgent }
+  // the slug of the story
+  const lang = appContext.router.locale
+  const slug = `${lang === 'th' ? `${lang}/` : ''}`
+  const defaultParam = {
+    version: STORYBLOK_VERSION, // or 'published'
+    cv: Date.now(),
+  }
+
+  const categoriesStoryParams = {
+    ...defaultParam,
+    sort_by: 'published_at',
+    starts_with: `${slug}categories`,
+  }
+  // loads the story from the Storyblok API
+  const { data: categoryStories } = await StoryblokAPIService.get(
+    `cdn/stories`,
+    categoriesStoryParams,
+  )
+
+  return { ...appProps, userAgent, categoryStories: categoryStories.stories }
 }

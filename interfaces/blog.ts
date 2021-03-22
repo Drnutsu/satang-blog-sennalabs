@@ -23,6 +23,9 @@ export interface CategoryComponentType extends ContentBaseType {
 export interface ArticleComponentType extends ContentBaseType {
   author: ComponentQueryBase<AuthorComponentType>
   category: ComponentQueryBase<CategoryComponentType>
+  relate_articles: ComponentQueryBase<ArticleComponentType>[]
+  next_article: ComponentQueryBase<ArticleComponentType>
+  body: string
   component: string
   detail: string
   image: StoryblokImage
@@ -35,7 +38,6 @@ export interface HeroBannerContentType extends ContentBaseType {
   categories: ComponentQueryBase<CategoryComponentType>[]
   featured_articles: ComponentQueryBase<ArticleComponentType>[]
 }
-
 
 export interface HomeBodyContentType extends ContentBaseType {
   last_articles_top: ComponentQueryBase<ArticleComponentType>[]

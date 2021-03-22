@@ -1,7 +1,8 @@
 import React from 'react'
+import Tag from 'components/tags/Tag'
+
 import styles from './index.module.scss'
 import { MiniBlogCardProps } from './interface'
-import Tag from 'components/tags/Tag'
 
 const MiniBlogCard = ({
   tag,

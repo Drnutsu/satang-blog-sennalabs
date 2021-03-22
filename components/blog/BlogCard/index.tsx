@@ -1,15 +1,13 @@
 import React from 'react'
-import {
-  HeartFilled,
-  MessageOutlined,
-  ShareAltOutlined,
-} from '@ant-design/icons'
+import { ShareAltOutlined } from '@ant-design/icons'
 import Author from 'components/Author'
 import Tag from 'components/tags/Tag'
+import { useDeviceDetector } from 'hooks/deviceDetector'
+import { useArticleNavigator } from 'hooks/navigator/article'
+
+import { BlogCardProps } from './interface'
 
 import styles from './index.module.scss'
-import { BlogCardProps } from './interface'
-import { useDeviceDetector } from '../../../hooks/deviceDetector'
 
 const BlogCard = ({
   tag,
@@ -20,10 +18,17 @@ const BlogCard = ({
   isNoImage,
   image,
   blogAuthor,
+  slug,
 }: BlogCardProps) => {
   const { isMobile } = useDeviceDetector()
+  const aricleNavigate = useArticleNavigator()
   return (
-    <div className={`${styles.container}  ${isBlue && styles.blue}`}>
+    <div
+      role="button"
+      tabIndex={-1}
+      className={`${styles.container}  ${isBlue && styles.blue}`}
+      onClick={() => aricleNavigate(slug)}
+    >
       <div className={styles.tag}>
         <Tag colorTheme={tag.color}>{tag.title}</Tag>
       </div>
@@ -38,8 +43,6 @@ const BlogCard = ({
         <Author blogAuthor={blogAuthor} />
       </div>
       <div className={styles.actions}>
-        <HeartFilled />
-        <MessageOutlined />
         <ShareAltOutlined />
       </div>
     </div>

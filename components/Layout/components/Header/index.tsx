@@ -2,19 +2,20 @@ import React from 'react'
 import HeaderTag from 'components/tags/HeaderTag'
 
 import styles from './index.module.scss'
+import { useCategories } from '../../../../hooks/categories'
 
 const Header = () => {
+  const { categories } = useCategories()
+
   return (
     <div className={styles.container}>
       <div className={styles['tag-suggestion']}>
-        <HeaderTag isActive>ทั้งหมด</HeaderTag>
-        <HeaderTag>เรืองไหม</HeaderTag>
-        <HeaderTag>Editor's Pick</HeaderTag>
-        <HeaderTag>bitCoin</HeaderTag>
-        <HeaderTag>ethereum</HeaderTag>
-        <HeaderTag>ข่าวสาร</HeaderTag>
-        <HeaderTag>บทวิเคราะห์</HeaderTag>
-        <HeaderTag>บทเขียนของเรา</HeaderTag>
+        <HeaderTag link="/" isActive>
+          ทั้งหมด
+        </HeaderTag>
+        {categories.map((category) => (
+          <HeaderTag slug={category.slug}>{category.content.title}</HeaderTag>
+        ))}
       </div>
     </div>
   )
